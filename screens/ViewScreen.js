@@ -5,14 +5,12 @@ import {
   StyleSheet,
   FlatList,
   TouchableOpacity,
+  ImageBackground,
 } from 'react-native';
+import OrderCard from '../components/OrderCard';
 
 const ViewScreen = (props) => {
-  return (
-    <View style={styles.screen}>
-      <Text>MY View Screen!</Text>
-    </View>
-  );
+  return <OrderCard />;
 };
 
 const styles = StyleSheet.create({

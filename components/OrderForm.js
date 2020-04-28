@@ -1,20 +1,26 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Picker } from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  Picker,
+  ImageBackground,
+} from 'react-native';
 
 const OrderForm = (props) => {
   const [selectedValue, setSelectedValue] = useState('order');
   return (
     <View style={styles.screen}>
-        <View style={styles.pic}>
-            <Text>Food Image Here</Text>
-        </View>
+      <View style={styles.pic}>
+        <Text>Food Image Here</Text>
+      </View>
 
       <Picker
         selectedValue={selectedValue}
         style={{ height: 50, width: 200 }}
         onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
       >
-
         <Picker.Item label="Sushi Special" value="sushi" />
         <Picker.Item label="Cheese Pizza" value="pizza" />
         <Picker.Item label="Taco Plate" value="tacos" />
@@ -24,7 +30,6 @@ const OrderForm = (props) => {
       <TouchableOpacity style={styles.button} onPress={props.onSelect}>
         <Text>order</Text>
       </TouchableOpacity>
-      
     </View>
   );
 };
@@ -54,16 +59,14 @@ const styles = StyleSheet.create({
     height: 50,
     borderRadius: 10,
   },
-  pic:{
+  pic: {
     alignItems: 'center',
     margin: 13,
     height: 300,
     width: 300,
-    backgroundColor:'white',
+    backgroundColor: 'white',
     borderRadius: 10,
-
-
-  }
+  },
 });
 
 export default OrderForm;
