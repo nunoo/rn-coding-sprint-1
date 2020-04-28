@@ -5,14 +5,14 @@ import {
   StyleSheet,
   FlatList,
   TouchableOpacity,
+  Picker,
 } from 'react-native';
+import OrderForm from '../components/OrderForm';
+
+import { MEALS, CATEGORIES } from '../data/dummy-data';
 
 const OrderScreen = (props) => {
-  return (
-    <View style={styles.screen}>
-      <Text>MY Order Screen!</Text>
-    </View>
-  );
+  return <OrderForm />;
 };
 
 const styles = StyleSheet.create({
