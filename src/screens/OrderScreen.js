@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{ useState }  from 'react';
 import {
   Text,
   View,
@@ -6,13 +6,16 @@ import {
   FlatList,
   TouchableOpacity,
   Picker,
+  StatusBar
 } from 'react-native';
 import OrderForm from '../components/OrderForm';
 
 import { MEALS, CATEGORIES } from '../data/dummy-data';
 
 const OrderScreen = (props) => {
-  return <OrderForm />;
+  return (
+    <OrderForm onSelect={() => props.navigation.navigate('Single Meal')} />
+  );
 };
 
 const styles = StyleSheet.create({

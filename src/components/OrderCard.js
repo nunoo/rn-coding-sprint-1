@@ -16,86 +16,28 @@ const OrderCard = (props) => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.scrollView}>
+
+        {/* Single Order Card*/}
         <View style={styles.mealItem}>
-          <TouchableOpacity onPress={props.goToMealDetail}>
+          <TouchableOpacity onPress={props.onSelect}>
             <View>
               {/* Top Card Section */}
-              <View style={{ ...styles.mealRow, ...styles.mealHeader }}>
+              <View >
                 <Text style={styles.title}>Pizza</Text>
               </View>
 
               {/* Bottom Card Section */}
-              <View style={[styles.mealRow, styles.mealDetail]}>
-                <Text>Ordered By: Shawn</Text>
-                <Text>9:09 pm</Text>
+              <View >
+                <Text style={styles.price}>$10.99</Text>
               </View>
             </View>
           </TouchableOpacity>
         </View>
-        <View style={styles.mealItem}>
-          <TouchableOpacity onPress={props.goToMealDetail}>
-            <View>
-              {/* Top Card Section */}
-              <View style={{ ...styles.mealRow, ...styles.mealHeader }}>
-                <Text style={styles.title}>Pizza</Text>
-              </View>
-
-              {/* Bottom Card Section */}
-              <View style={[styles.mealRow, styles.mealDetail]}>
-                <Text>Ordered By: Shawn</Text>
-                <Text>9:09 pm</Text>
-              </View>
-            </View>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.mealItem}>
-          <TouchableOpacity onPress={props.goToMealDetail}>
-            <View>
-              {/* Top Card Section */}
-              <View style={{ ...styles.mealRow, ...styles.mealHeader }}>
-                <Text style={styles.title}>Pizza</Text>
-              </View>
-
-              {/* Bottom Card Section */}
-              <View style={[styles.mealRow, styles.mealDetail]}>
-                <Text>Ordered By: Shawn</Text>
-                <Text>9:09 pm</Text>
-              </View>
-            </View>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.mealItem}>
-          <TouchableOpacity onPress={props.goToMealDetail}>
-            <View>
-              {/* Top Card Section */}
-              <View style={{ ...styles.mealRow, ...styles.mealHeader }}>
-                <Text style={styles.title}>Pizza</Text>
-              </View>
-
-              {/* Bottom Card Section */}
-              <View style={[styles.mealRow, styles.mealDetail]}>
-                <Text>Ordered By: Shawn</Text>
-                <Text>9:09 pm</Text>
-              </View>
-            </View>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.mealItem}>
-          <TouchableOpacity onPress={props.goToMealDetail}>
-            <View>
-              {/* Top Card Section */}
-              <View style={{ ...styles.mealRow, ...styles.mealHeader }}>
-                <Text style={styles.title}>Pizza</Text>
-              </View>
-
-              {/* Bottom Card Section */}
-              <View style={[styles.mealRow, styles.mealDetail]}>
-                <Text>Ordered By: Shawn</Text>
-                <Text>9:09 pm</Text>
-              </View>
-            </View>
-          </TouchableOpacity>
-        </View>
+       
+       
+      
+        
+        
       </ScrollView>
     </SafeAreaView>
   );
@@ -113,11 +55,15 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 42,
   },
+  price:{
+    margin: 10,
+    textAlign: 'center',
+  },
 
   mealItem: {
-    height: 200,
+    height: 100,
     width: '90%',
-    backgroundColor: '#ddd',
+    backgroundColor: 'pink',
     margin: 15,
 
     borderRadius: 10,
@@ -128,18 +74,7 @@ const styles = StyleSheet.create({
     height: '100%',
     justifyContent: 'flex-end',
   },
-  mealRow: {
-    flexDirection: 'row',
-  },
-  mealHeader: {
-    height: '85%',
-  },
-  mealDetail: {
-    paddingHorizontal: 10,
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    height: '15%',
-  },
+
   titleContainer: {
     backgroundColor: 'rgba(0,0,0,0.5)',
     paddingVertical: 5,
