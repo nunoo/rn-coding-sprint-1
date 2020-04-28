@@ -7,13 +7,13 @@ import {
   TouchableOpacity,
   Picker,
 } from 'react-native';
-import OrderForm from '../components/OrderForm';
+// import OrderForm from '../components/OrderForm';
 
-import { MEALS, CATEGORIES } from '../data/dummy-data';
-
-const OrderScreen = (props) => {
+const SingleMealScreen = (props) => {
   return (
-    <OrderForm onSelect={() => props.navigation.navigate('Single Meal')} />
+    <View style={styles.screen}>
+      <Text>My Single Meal Screen!</Text>
+    </View>
   );
 };
 
@@ -25,4 +25,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default OrderScreen;
+export default SingleMealScreen;

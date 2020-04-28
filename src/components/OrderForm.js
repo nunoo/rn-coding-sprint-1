@@ -6,30 +6,21 @@ import {
   TouchableOpacity,
   Picker,
   ImageBackground,
+  Button,
 } from 'react-native';
 
 const OrderForm = (props) => {
   const [selectedValue, setSelectedValue] = useState('order');
   return (
     <View style={styles.screen}>
-      <View style={styles.pic}>
-        <Text>Food Image Here</Text>
-      </View>
-
-      <Picker
-        selectedValue={selectedValue}
-        style={{ height: 50, width: 200 }}
-        onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
+      <TouchableOpacity
+        style={styles.button}
+        title="go to meal"
+        onPress={props.onSelect}
       >
-        <Picker.Item label="Sushi Special" value="sushi" />
-        <Picker.Item label="Cheese Pizza" value="pizza" />
-        <Picker.Item label="Taco Plate" value="tacos" />
-        <Picker.Item label="Falafel Bowl" value="falafel" />
-      </Picker>
-
-      <TouchableOpacity style={styles.button} onPress={props.onSelect}>
-        <Text>order</Text>
+        <Text>go to meal</Text>
       </TouchableOpacity>
+
     </View>
   );
 };
@@ -39,8 +30,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     margin: 13,
-    marginTop: 50,
-    height: 650,
+    // marginTop: 50,
+    height: 550,
     width: 350,
     borderRadius: 10,
     elevation: 5,
@@ -51,7 +42,7 @@ const styles = StyleSheet.create({
     shadowRadius: 10,
   },
   button: {
-    marginTop: 150,
+    marginTop: 100,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'white',

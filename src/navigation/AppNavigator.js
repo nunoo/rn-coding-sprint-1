@@ -10,6 +10,7 @@ import Colors from '../constants/colors';
 import OrderScreen from '../screens/OrderScreen';
 import ViewScreen from '../screens/ViewScreen';
 import UserScreen from '../screens/UserScreen';
+import SingleMealScreen from '../screens/SingleMeal';
 
 // create nav component stack
 const OrderStack = createStackNavigator();
@@ -18,8 +19,10 @@ const OrderNavigator = () => {
   return (
     <OrderStack.Navigator>
       <OrderStack.Screen name="Order" component={OrderScreen} />
-      <OrderStack.Screen name="View Orders" component={ViewScreen} />
-      <OrderStack.Screen name="User" component={UserScreen} />
+      <OrderStack.Screen name="Single Meal" component={SingleMealScreen} />
+
+      {/* <OrderStack.Screen name="View Orders" component={ViewScreen} />
+      <OrderStack.Screen name="User" component={UserScreen} /> */}
     </OrderStack.Navigator>
   );
 };
@@ -33,7 +36,7 @@ const OrderTabNavigator = () => {
     <OrderTab.Navigator>
       <OrderTab.Screen
         name="Order"
-        component={OrderScreen}
+        component={OrderNavigator}
         options={() => ({
           tabBarIcon: ({ color }) => {
             return <Ionicons name="ios-restaurant" size={25} color={color} />;
