@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{ useState }  from 'react';
 import {
   Text,
   View,
@@ -6,6 +6,7 @@ import {
   FlatList,
   TouchableOpacity,
   Picker,
+  StatusBar
 } from 'react-native';
 import OrderForm from '../components/OrderForm';
 

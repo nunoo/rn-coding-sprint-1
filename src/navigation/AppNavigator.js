@@ -17,11 +17,26 @@ const OrderStack = createStackNavigator();
 
 const OrderNavigator = () => {
   return (
-    <OrderStack.Navigator>
-      <OrderStack.Screen name="Order" component={OrderScreen} />
+    <OrderStack.Navigator
+      screenOptions={{
+        headerStyle: {
+          backgroundColor: 'black',
+        },
+        headerTintColor:
+          Platform.OS === 'android' ? '#fff' : Colors.primaryColor,
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+      }}
+    >
+      <OrderStack.Screen
+        name="Order"
+        component={OrderScreen}
+        options={{ title: 'nunoo' }}
+      />
       <OrderStack.Screen name="Single Meal" component={SingleMealScreen} />
-
-      {/* <OrderStack.Screen name="View Orders" component={ViewScreen} />
+      {/* 
+      <OrderStack.Screen name="View Orders" component={ViewScreen} />
       <OrderStack.Screen name="User" component={UserScreen} /> */}
     </OrderStack.Navigator>
   );
@@ -33,7 +48,13 @@ const OrderTab = createBottomTabNavigator();
 
 const OrderTabNavigator = () => {
   return (
-    <OrderTab.Navigator>
+    <OrderTab.Navigator
+      tabBarOptions={{
+        activeTintColor:'pink',
+        activeBackgroundColor:'black',
+        inactiveBackgroundColor:'black',
+      }}
+    >
       <OrderTab.Screen
         name="Order"
         component={OrderNavigator}
