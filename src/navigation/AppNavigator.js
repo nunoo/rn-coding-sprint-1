@@ -20,7 +20,7 @@ const OrderNavigator = () => {
     <OrderStack.Navigator
       screenOptions={{
         headerStyle: {
-          backgroundColor: 'black',
+          backgroundColor: '#eee',
         },
         headerTintColor:
           Platform.OS === 'android' ? '#fff' : Colors.primaryColor,
@@ -34,7 +34,11 @@ const OrderNavigator = () => {
         component={OrderScreen}
         options={{ title: 'nunoo' }}
       />
-      <OrderStack.Screen name="Single Meal" component={SingleMealScreen} />
+      <OrderStack.Screen
+        name="Single Meal"
+        component={SingleMealScreen}
+        options={{ title: 'nunoo' }}
+      />
       {/* 
       <OrderStack.Screen name="View Orders" component={ViewScreen} />
       <OrderStack.Screen name="User" component={UserScreen} /> */}
@@ -50,9 +54,9 @@ const OrderTabNavigator = () => {
   return (
     <OrderTab.Navigator
       tabBarOptions={{
-        activeTintColor:'pink',
-        activeBackgroundColor:'black',
-        inactiveBackgroundColor:'black',
+        activeTintColor: '#FFE0FF',
+        activeBackgroundColor: 'black',
+        inactiveBackgroundColor: 'black',
       }}
     >
       <OrderTab.Screen

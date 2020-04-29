@@ -4,129 +4,44 @@ import {
   Text,
   StyleSheet,
   TouchableOpacity,
-  Picker,
   ImageBackground,
   FlatList,
-  SafeAreaView,
-  ScrollView,
 } from 'react-native';
 import Constants from 'expo-constants';
 
 const OrderCard = (props) => {
   return (
-    <SafeAreaView style={styles.container}>
-      <ScrollView style={styles.scrollView}>
-
-        {/* Single Order Card*/}
-        <View style={styles.mealItem}>
-          <TouchableOpacity onPress={props.onSelect}>
-            <View>
-              {/* Top Card Section */}
-              <View >
-                <Text style={styles.title}>Pizza</Text>
+    <View style={styles.mealItem}>
+      <TouchableOpacity onPress={props.onSelect}>
+        <View>
+          {/* Top Card Section */}
+          <View style={{ ...styles.mealRow, ...styles.mealHeader }}>
+            <ImageBackground
+              source={{ uri: props.mealData.imageUrl }}
+              style={styles.imgBG}
+            >
+              <View style={styles.titleContainer}>
+                <Text style={styles.title}>{props.mealData.title}</Text>
               </View>
+            </ImageBackground>
+          </View>
 
-              {/* Bottom Card Section */}
-              <View >
-                <Text style={styles.price}>$10.99</Text>
-              </View>
-            </View>
-          </TouchableOpacity>
+          {/* Bottom Card Section */}
+          <View style={[styles.mealRow, styles.mealDetail]}>
+            <Text>${props.mealData.price} </Text>
+          </View>
         </View>
-        {/* Single Order Card*/}
-        <View style={styles.mealItem}>
-          <TouchableOpacity onPress={props.onSelect}>
-            <View>
-              {/* Top Card Section */}
-              <View >
-                <Text style={styles.title}>Sushi</Text>
-              </View>
-
-              {/* Bottom Card Section */}
-              <View >
-                <Text style={styles.price}>$10.99</Text>
-              </View>
-            </View>
-          </TouchableOpacity>
-        </View>
-        {/* Single Order Card*/}
-        <View style={styles.mealItem}>
-          <TouchableOpacity onPress={props.onSelect}>
-            <View>
-              {/* Top Card Section */}
-              <View >
-                <Text style={styles.title}>Tacos</Text>
-              </View>
-
-              {/* Bottom Card Section */}
-              <View >
-                <Text style={styles.price}>$10.99</Text>
-              </View>
-            </View>
-          </TouchableOpacity>
-        </View>
-        {/* Single Order Card*/}
-        <View style={styles.mealItem}>
-          <TouchableOpacity onPress={props.onSelect}>
-            <View>
-              {/* Top Card Section */}
-              <View >
-                <Text style={styles.title}>Falafel</Text>
-              </View>
-
-              {/* Bottom Card Section */}
-              <View >
-                <Text style={styles.price}>$10.99</Text>
-              </View>
-            </View>
-          </TouchableOpacity>
-        </View>
-        {/* Single Order Card*/}
-        <View style={styles.mealItem}>
-          <TouchableOpacity onPress={props.onSelect}>
-            <View>
-              {/* Top Card Section */}
-              <View >
-                <Text style={styles.title}>Combo Plate</Text>
-              </View>
-
-              {/* Bottom Card Section */}
-              <View >
-                <Text style={styles.price}>$29.99</Text>
-              </View>
-            </View>
-          </TouchableOpacity>
-        </View>
-        
-        
-      </ScrollView>
-    </SafeAreaView>
+      </TouchableOpacity>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    marginTop: Constants.statusBarHeight,
-  },
-  scrollView: {
-    backgroundColor: 'white',
-    marginHorizontal: 20,
-  },
-  text: {
-    fontSize: 42,
-  },
-  price:{
-    margin: 10,
-    textAlign: 'center',
-  },
-
   mealItem: {
-    height: 100,
-    width: '90%',
-    backgroundColor: 'pink',
-    margin: 15,
-
+    height: 200,
+    width: '100%',
+    backgroundColor: '#ddd',
+    marginBottom: 15,
     borderRadius: 10,
     overflow: 'hidden',
   },
@@ -135,17 +50,27 @@ const styles = StyleSheet.create({
     height: '100%',
     justifyContent: 'flex-end',
   },
-
+  mealRow: {
+    flexDirection: 'row',
+  },
+  mealHeader: {
+    height: '85%',
+  },
+  mealDetail: {
+    paddingHorizontal: 10,
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    height: '15%',
+  },
   titleContainer: {
     backgroundColor: 'rgba(0,0,0,0.5)',
     paddingVertical: 5,
     paddingHorizontal: 12,
   },
   title: {
-    fontSize: 25,
-    color: 'black',
+    fontSize: 22,
+    color: 'white',
     textAlign: 'center',
-    margin: 5,
   },
 });
 

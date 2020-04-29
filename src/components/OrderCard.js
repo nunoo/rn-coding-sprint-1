@@ -4,13 +4,15 @@ import {
   Text,
   StyleSheet,
   TouchableOpacity,
-  Picker,
   ImageBackground,
   FlatList,
-  SafeAreaView,
   ScrollView,
+  SafeAreaView
+
+
 } from 'react-native';
 import Constants from 'expo-constants';
+
 
 const OrderCard = (props) => {
   return (
@@ -63,7 +65,7 @@ const styles = StyleSheet.create({
   mealItem: {
     height: 100,
     width: '90%',
-    backgroundColor: 'pink',
+    backgroundColor: '#3332',
     margin: 15,
 
     borderRadius: 10,
