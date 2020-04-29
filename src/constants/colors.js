@@ -1,4 +1,4 @@
 export default {
-  primaryColor: 'pink',
+  primaryColor: 'black',
   secondaryColor: '#ff6f00',
 };
