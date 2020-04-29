@@ -9,7 +9,7 @@ import {
   Button,
   ImageBackground,
   TextInput,
-  TouchableWithoutFeedback
+  TouchableWithoutFeedback,
 } from 'react-native';
 import SingleMealCard from '../components/SingleMealCard';
 
@@ -18,6 +18,7 @@ import { MEALS, CATEGORIES } from '../data/dummy-data';
 const SingleMealScreen = (props) => {
   console.log(props.route);
 
+  // find single meal id from MEALS dummy data
   const meal = MEALS.find((meal) => {
     return meal.id === props.route.params.mealId;
   });
@@ -55,11 +56,12 @@ const SingleMealScreen = (props) => {
 
 const styles = StyleSheet.create({
   textInputStyle: {
-    height: 30,
+    height: 20,
     width: 40,
+    marginRight: 70,
     borderColor: 'gray',
     borderWidth: 1,
-    backgroundColor:'white',
+    backgroundColor: 'white',
   },
   mealItem: {
     height: 400,
