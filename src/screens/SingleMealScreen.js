@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   Picker,
   Button,
+  ImageBackground,
 } from 'react-native';
 import SingleMealCard from '../components/SingleMealCard';
 
@@ -15,67 +16,86 @@ import { MEALS, CATEGORIES } from '../data/dummy-data';
 const SingleMealScreen = (props) => {
   console.log(props.route);
 
-  // const catId = props.route.params.categoryId;
-  // const category = CATEGORIES.find((cat) => cat.id === catId);
-  // const displayedMeals = MEALS.filter(
-  //   (meal) => meal.categoryIds.indexOf(catId) >= 0
-  // );
-
-  // const renderItems = (itemData) => {
-  //   return <SingleMealCard mealData={itemData.item} />;
-  // };
-
-  // return <FlatList data={displayedMeals} renderItem={renderItems} />;
+  const meal = MEALS.find((meal) => {
+    return meal.id === props.route.params.mealId;
+  });
 
   return (
-    <FlatList
-      data={MEALS}
-      renderItem={(itemData) => {
-        return (
-          <View>
-            <TouchableOpacity
-              style={styles.card}
-              // pass data on a click
+    <View style={styles.mealItem}>
+      <TouchableOpacity>
+        <View>
+          {/* Top Card Section */}
+          <View style={{ ...styles.mealRow, ...styles.mealHeader }}>
+            <ImageBackground
+              source={{ uri: meal.imageUrl }}
+              style={styles.imgBG}
             >
-              <Text style={styles.title}>{itemData.title}</Text>
+              <View style={styles.titleContainer}>
+                <Text style={styles.title}>{meal.title}</Text>
+              </View>
+            </ImageBackground>
+          </View>
+
+          {/* Bottom Card Section */}
+          <View style={[styles.mealRow, styles.mealDetail]}>
+            <Text>${meal.price} </Text>
+            <TouchableOpacity style={styles.button}>
+              <Text style={styles.buttonText}>Order</Text>
             </TouchableOpacity>
           </View>
-        );
-      }}
-    />
+        </View>
+      </TouchableOpacity>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
-  card: {
-    flex: 1,
+  mealItem: {
+    height: 200,
+    width: '100%',
+    backgroundColor: '#ddd',
+    marginBottom: 15,
+    borderRadius: 10,
+    overflow: 'hidden',
+  },
+  imgBG: {
+    width: '100%',
+    height: '100%',
+    justifyContent: 'flex-end',
+  },
+  mealRow: {
+    flexDirection: 'row',
+  },
+  mealHeader: {
+    height: '85%',
+  },
+  mealDetail: {
+    paddingHorizontal: 10,
+    justifyContent: 'space-between',
     alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#3332',
-    margin: 20,
-    padding: 20,
+    height: '15%',
+  },
+  titleContainer: {
+    backgroundColor: 'rgba(0,0,0,0.5)',
+    paddingVertical: 5,
+    paddingHorizontal: 12,
   },
   title: {
-    // color: '#eee',
+    fontSize: 22,
+    color: 'white',
+    textAlign: 'center',
   },
+  button: {
+    height: 20,
+    width: 40,
+    borderRadius: 10,
+    backgroundColor: 'white',
+  },
+  buttonText:{
+    margin: 2,
+    alignItems: 'center',
+    justifyContent:'center'
+  }
 });
 
-// const styles = StyleSheet.create({
-//   screen: {
-//     flex: 1,
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//   },
-//   button: {
-//     marginTop: 150,
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//     backgroundColor: 'white',
-//     width: 200,
-//     height: 50,
-//     borderRadius: 10,
-//   },
-// });
-
 export default SingleMealScreen;
-

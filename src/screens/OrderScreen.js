@@ -20,9 +20,9 @@ const OrderScreen = (props) => {
         onSelect={() => {
           props.navigation.navigate('Single Meal', {
             mealId: itemData.item.id,
-            title: itemData.item.title,
-            price: itemData.item.price,
-            img: itemData.item.imageUrl,
+            // title: itemData.item.title,
+            // price: itemData.item.price,
+            // img: itemData.item.imageUrl,
           });
         }}
       />

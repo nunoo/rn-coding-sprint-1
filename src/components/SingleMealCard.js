@@ -17,7 +17,7 @@ const SingleMealCard = (props) => {
     <View style={styles.gridItems}>
       <TouchableOpacity style={{ flex: 1 }} onPress={props.onSelect}>
         <View style={styles.container}>
-          <Text style={styles.title}>{props.title}</Text>
+          <Text style={styles.title}>{meal.title}</Text>
           <Text style={styles.title}>$ 10.99</Text>
         </View>
       </TouchableOpacity>
