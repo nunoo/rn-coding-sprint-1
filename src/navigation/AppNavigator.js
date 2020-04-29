@@ -10,7 +10,7 @@ import Colors from '../constants/colors';
 import OrderScreen from '../screens/OrderScreen';
 import ViewScreen from '../screens/ViewScreen';
 import UserScreen from '../screens/UserScreen';
-import SingleMealScreen from '../screens/SingleMeal';
+import SingleMealScreen from '../screens/SingleMealScreen';
 
 // create nav component stack
 const OrderStack = createStackNavigator();
