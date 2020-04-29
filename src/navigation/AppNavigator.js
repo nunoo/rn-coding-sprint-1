@@ -54,9 +54,9 @@ const OrderTabNavigator = () => {
   return (
     <OrderTab.Navigator
       tabBarOptions={{
-        activeTintColor: '#FFE0FF',
-        activeBackgroundColor: 'black',
-        inactiveBackgroundColor: 'black',
+        activeTintColor: 'black',
+        activeBackgroundColor: 'white',
+        inactiveBackgroundColor: 'white',
       }}
     >
       <OrderTab.Screen
