@@ -8,6 +8,8 @@ import {
   Picker,
   Button,
   ImageBackground,
+  TextInput,
+  TouchableWithoutFeedback
 } from 'react-native';
 import SingleMealCard from '../components/SingleMealCard';
 
@@ -22,7 +24,7 @@ const SingleMealScreen = (props) => {
 
   return (
     <View style={styles.mealItem}>
-      <TouchableOpacity>
+      <TouchableWithoutFeedback>
         <View>
           {/* Top Card Section */}
           <View style={{ ...styles.mealRow, ...styles.mealHeader }}>
@@ -39,19 +41,28 @@ const SingleMealScreen = (props) => {
           {/* Bottom Card Section */}
           <View style={[styles.mealRow, styles.mealDetail]}>
             <Text>${meal.price} </Text>
+            <Text>Enter Quantity:</Text>
+            <TextInput style={styles.textInputStyle} />
             <TouchableOpacity style={styles.button}>
               <Text style={styles.buttonText}>Order</Text>
             </TouchableOpacity>
           </View>
         </View>
-      </TouchableOpacity>
+      </TouchableWithoutFeedback>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  textInputStyle: {
+    height: 30,
+    width: 40,
+    borderColor: 'gray',
+    borderWidth: 1,
+    backgroundColor:'white',
+  },
   mealItem: {
-    height: 200,
+    height: 400,
     width: '100%',
     backgroundColor: '#ddd',
     marginBottom: 15,
@@ -91,11 +102,11 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     backgroundColor: 'white',
   },
-  buttonText:{
+  buttonText: {
     margin: 2,
     alignItems: 'center',
-    justifyContent:'center'
-  }
+    justifyContent: 'center',
+  },
 });
 
 export default SingleMealScreen;
