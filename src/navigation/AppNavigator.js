@@ -16,34 +16,34 @@ import SingleMealScreen from '../screens/SingleMealScreen';
 const OrderStack = createStackNavigator();
 
 const OrderNavigator = () => {
-  return (
-    <OrderStack.Navigator
-      screenOptions={{
-        headerStyle: {
-          backgroundColor: '#eee',
-        },
-        headerTintColor:
-          Platform.OS === 'android' ? '#fff' : Colors.primaryColor,
-        headerTitleStyle: {
-          fontWeight: 'bold',
-        },
-      }}
-    >
-      <OrderStack.Screen
-        name="Order"
-        component={OrderScreen}
-        options={{ title: 'nunoo' }}
-      />
-      <OrderStack.Screen
-        name="Single Meal"
-        component={SingleMealScreen}
-        options={{ title: 'nunoo' }}
-      />
-      {/* 
+	return (
+		<OrderStack.Navigator
+			screenOptions={{
+				headerStyle: {
+					backgroundColor: '#eee',
+				},
+				headerTintColor:
+					Platform.OS === 'android' ? '#fff' : Colors.primaryColor,
+				headerTitleStyle: {
+					fontWeight: 'bold',
+				},
+			}}
+		>
+			<OrderStack.Screen
+				name="Order"
+				component={OrderScreen}
+				options={{ title: 'nunoo' }}
+			/>
+			<OrderStack.Screen
+				name="Single Meal"
+				component={SingleMealScreen}
+				options={{ title: 'nunoo' }}
+			/>
+			{/* 
       <OrderStack.Screen name="View Orders" component={ViewScreen} />
       <OrderStack.Screen name="User" component={UserScreen} /> */}
-    </OrderStack.Navigator>
-  );
+		</OrderStack.Navigator>
+	);
 };
 
 // create tab stack
@@ -51,43 +51,43 @@ const OrderNavigator = () => {
 const OrderTab = createBottomTabNavigator();
 
 const OrderTabNavigator = () => {
-  return (
-    <OrderTab.Navigator
-      tabBarOptions={{
-        activeTintColor: 'black',
-        activeBackgroundColor: 'white',
-        inactiveBackgroundColor: 'white',
-      }}
-    >
-      <OrderTab.Screen
-        name="Order"
-        component={OrderNavigator}
-        options={() => ({
-          tabBarIcon: ({ color }) => {
-            return <Ionicons name="ios-restaurant" size={25} color={color} />;
-          },
-        })}
-      />
-      <OrderTab.Screen
-        name="View Orders"
-        component={ViewScreen}
-        options={() => ({
-          tabBarIcon: ({ color }) => {
-            return <Ionicons name="ios-list" size={25} color={color} />;
-          },
-        })}
-      />
-      <OrderTab.Screen
-        name="User"
-        component={UserScreen}
-        options={() => ({
-          tabBarIcon: ({ color }) => {
-            return <Ionicons name="ios-person" size={25} color={color} />;
-          },
-        })}
-      />
-    </OrderTab.Navigator>
-  );
+	return (
+		<OrderTab.Navigator
+			tabBarOptions={{
+				activeTintColor: 'black',
+				activeBackgroundColor: 'white',
+				inactiveBackgroundColor: 'white',
+			}}
+		>
+			<OrderTab.Screen
+				name="Order"
+				component={OrderNavigator}
+				options={() => ({
+					tabBarIcon: ({ color }) => {
+						return <Ionicons name="ios-restaurant" size={25} color={color} />;
+					},
+				})}
+			/>
+			<OrderTab.Screen
+				name="View Orders"
+				component={ViewScreen}
+				options={() => ({
+					tabBarIcon: ({ color }) => {
+						return <Ionicons name="ios-list" size={25} color={color} />;
+					},
+				})}
+			/>
+			<OrderTab.Screen
+				name="User"
+				component={UserScreen}
+				options={() => ({
+					tabBarIcon: ({ color }) => {
+						return <Ionicons name="ios-person" size={25} color={color} />;
+					},
+				})}
+			/>
+		</OrderTab.Navigator>
+	);
 };
 
 export default OrderTabNavigator;

@@ -15,9 +15,9 @@ const mealReducer = (state, action) => {
 			updatedMeals.forEach((meal) => {
 				if (meal.id === action.meal.id) {
 					meal.imageUrl =
-						'https://lh3.googleusercontent.com/proxy/pDGaEYpqJmQlCz7ROMGk_kaiBZOzxF4i_I2v69ilmCFsWQvORKQbFATP7joOG-CF08w7-vv4v8CxbFPLyEjiw2VPcfPbNb-ZhjvmW9ToC_wK';
+						'https://i.imgur.com/hqhoCzIg.jpg';
 					meal.title = 'the scotts';
-					meal.price = '420';
+					meal.price = 'kid cudi x travis scott';
 				}
 			});
 			return { ...state, meals: updatedMeals };

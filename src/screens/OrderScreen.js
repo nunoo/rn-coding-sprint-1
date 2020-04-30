@@ -22,13 +22,9 @@ const OrderScreen = (props) => {
 			<OrderForm
 				mealData={itemData.item}
 				onSelect={() => {
-					changePic(itemData.item);
-					// props.navigation.navigate('Single Meal', {
-					//   mealId: itemData.item.id,
-					// title: itemData.item.title,
-					// price: itemData.item.price,
-					// img: itemData.item.imageUrl,
-					// });
+					props.navigation.navigate('Single Meal', {
+						mealId: itemData.item.id,
+					});
 				}}
 			/>
 		);
